@@ -491,8 +491,97 @@ main.container {
 }
 
 
+
+
+
+/* Responsive Palette Layout */
 .palette-container {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Picker + button wrapper */
+.picker-wrapper {
+  flex: 1;
+  min-width: 260px;
+  max-width: 350px;
+}
+
+/* Palette list */
+.palette {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 260px;
+}
+
+/* Individual color item */
+.color-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  transition: background 0.2s ease;
+}
+
+.color-item:hover {
+  background: #f0f0f0;
+}
+
+/* Left side: preview + text */
+.color-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.color-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.color-info span {
+  font-family: monospace;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Copy Button */
+.copy-btn {
+  border: none;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  background: #eee;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-btn:hover {
+  background: #ddd;
+}
+
+.copy-btn.copied {
+  background: #4caf50;
+  color: #fff;
+}
+
+/* 📱 Mobile: stack vertically */
+@media (max-width: 768px) {
+  .palette-container {
+    flex-direction: column;
+  }
+
+  .picker-wrapper,
+  .palette {
+    width: 100%;
+  }
 }
